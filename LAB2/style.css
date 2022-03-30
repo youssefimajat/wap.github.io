@@ -1,0 +1,36 @@
+body{
+    background-color: dimgray;
+    color: #f39604;
+    font-family: 'Noto Serif', serif;
+}
+.myMoods img{
+    width: 200px;
+    height: 200px;
+}
+.myMoods div{
+    display: inline-block;
+    margin-right: 25%;
+}
+.wrapper{
+    width: 900px;
+    height: auto;
+    margin: auto;
+    background-color: #2f3030;
+    padding: 10px;
+
+}
+.html-css-validation-block img{
+    width: 60px;
+    height: 30px;
+}
+
+footer{
+    padding-top: 20px;
+    text-align: center;
+    font-size: small;
+    letter-spacing: 0.2rem;
+}
+
+p{
+    color: black;
+}
