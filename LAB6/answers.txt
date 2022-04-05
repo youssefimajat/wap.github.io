@@ -1,0 +1,14 @@
+HOMEWORK 1 :
+
+
+while EC : creation -> execution 
+LE : shooter:fn              outer ; makeArmy 
+tdz : SHOOTER
+________________________________________________________________
+________________________________________________________________| 
+makeArmy EC : creation -> execution 
+LE : Shooters [fn] , i = 0                   , arguments : length = 0 , outer : global   TDZ : shooters , i
+________________________________________________________________
+________________________________________________________________| 
+global EC : creation -> execution 
+LE : {makeArmy : fn                      , outer : null}        | TDZ : army
