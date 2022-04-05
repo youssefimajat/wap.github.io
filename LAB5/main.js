@@ -4,8 +4,8 @@ function sum(qw){
 }
 
 function getNewArray(qs){
-    return qs.filter(input=>input.includes("a") && s.length==5);
+    return qs.filter(input=>(input.includes('a') && input.length==5));
     }
 
 console.log(sum(['1','2','30','40']));
-console.log(getNewArray("Mohamed","aivee"))
+console.log(getNewArray(["Mohamed","aivee"]))
