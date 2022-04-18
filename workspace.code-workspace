@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "..\\..\\..\\Desktop\\lesson14-client"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "wap.github.io"
+	}
+}

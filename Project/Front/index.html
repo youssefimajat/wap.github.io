@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MyMusic Website</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="./main.js"></script>
+</head>
+
+<body>
+  <header class="header">
+    <img src="/Project/images/header.png" class="logo" alt="logo">
+    <div id="input-credentials" class="input-credentials">
+      <!-- <label id="error-message"></label> -->
+      <label id="search-label" for="search">search : </label>
+      <input type="search" id="search-input" />
+      <label id="input1" for="username">Username : </label>
+      <input type="text" id="username" />
+      <label id="input2" for="password">Password : </label>
+      <input type="password" id="password" />
+      <button type="submit" class="login-button" onclick="login()" id="btn-submit">Login</button>
+      <button type="log out" class="logout-button" onclick="logout()" id="btn-logout">logout</button>
+    </div>
+  </header>
+  <h1 id="first-message">Welcom to MyMusic Website</h1>
+
+
+  <div id="containerALL" class="container">
+
+    <div class="top-song">
+      <h1 id="Second-message">Songs you may interest</h1>
+
+      <table id="mySongTable">
+        <tr>
+          <th>ID</th>
+          <th>TITLE</th>
+          <th>RELEASE DATE</th>
+          <th>Action</th>
+        </tr>
+      </table>
+    </div>
+
+    <div class="buttom-playlist">
+      <h1 id="Third-message">Your playlist</h1>
+
+      <table id="myPlaylistTable">
+        <tr>
+          <th>ID</th>
+          <th>TITLE</th>
+          <th>Action</th>
+        </tr>
+      </table>
+    </div>
+
+  </div>
+  <footer><audio controls autoplay>
+      <source src="https://media.geeksforgeeks.org/wp-content/uploads/20190625153922/frog.mp3" type="audio/ogg">
+      <source src="https://media.geeksforgeeks.org/wp-content/uploads/20190625153922/frog.ogg" type="audio/mpeg">
+    </audio></footer>
+
+</body>
+
+</html>

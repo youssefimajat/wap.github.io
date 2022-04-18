@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;;
+}
+
+.header {
+    display: flex;
+    flex-direction:column; 
+    padding: 15px;
+    border: 2px solid coral;
+}
+
+.logo {
+    margin-left: 28px;
+    margin-top: 5px;
+    display: inline-block;
+    height: 100px;
+    width: 100px;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  tr:hover {background-color: coral;}
+
+.input-credentials {
+    display: flex;
+    flex-direction: justify-content; 
+    margin-left: 40%;
+     display: inline-block; 
+    margin-bottom: 30px;
+    padding-top: 0px;
+    margin-top: 20;
+    margin-top: -54px;
+    
+}
+
+input {
+    margin-left: 64px;
+    margin-top: -27px;
+    border-radius: 5px;
+    padding: 7px 15px;
+    border-color: rgb(221, 221, 221);
+    margin-right: 20px;
+
+}
+
+input:hover {
+    border-radius: 5px;
+    padding: 7px 15px;
+    border-color: rgb(34, 34, 34);
+
+}
+
+/* .login-button,
+ .logout-button {
+    background-color: black;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    padding: 10px 22px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer; 
+} */
+.login-button:hover,
+.login-button:focus {
+  background-color: #fb8332;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+}
+.login-button:hover{
+    transform: translateY(-1px);
+}
+.login-button:active{
+    background-color: #c85000;
+    box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
+    transform: translateY(0);
+}
+.login-button,.logout-button{
+    align-items: center;
+    background-clip: padding-box;
+    background-color: #fa6400;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    justify-content: center;
+    line-height: 1.25;
+    margin: 0;
+    min-height: 3rem;
+    padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+    position: relative;
+    text-decoration: none;
+    transition: all 250ms;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: baseline;
+    width: auto;
+    
+}
+
+.error-message {
+    color: red;
+    position: absolute;
+    top: 126px;
+    left: 598px;
+}
