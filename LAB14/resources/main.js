@@ -32,8 +32,8 @@ function renderBook(prod) {
         dy=".3em">140x140</text>
     </svg>`;
 
-    const h2 = document.createElement('h2');
-    h2.textContent = prod.title;
+    const h2 = document.createElement('h2');//<h2></h2>
+    h2.textContent = prod.title;//<h2>titlel</h2>
 
     const isbn = document.createElement('p');
     isbn.textContent = prod.isbn;
