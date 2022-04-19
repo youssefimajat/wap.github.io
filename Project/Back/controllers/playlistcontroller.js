@@ -9,7 +9,14 @@ exports.addSongToPlaylist = (req,res,next) => {
     res.status(200).json(playlist.addSongToPlaylist(req.params.idsong)); 
 };
 
+
 exports.deletefromPlaylist = (req,res,next) => {
     console.log('hhhh',req.params);
     res.status(200).json(playlist.deletefromPlaylist(req.params.idsong)); 
 };
+
+exports.playMusic = (req,res,next) =>{
+    console.log('playing..', req.params);
+    res.send({});
+    res.status(200).json(playlist.playMusic(req.params.idsong));
+}

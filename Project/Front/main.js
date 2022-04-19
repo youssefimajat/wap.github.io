@@ -3,9 +3,15 @@ window.addEventListener("load", function () {
     this.document.getElementById("btn-logout").style.display = "none";
     this.document.getElementById("search-label").style.display = "none";
     this.document.getElementById("search-input").style.display = "none";
-})
+    this.document.getElementById("btn-search").style.display = "none";
+    this.document.getElementById("myAudio").style.display = "none"
 
+})
+var songs = [];
 async function login() {
+    if(document.getElementById("username").value == ""  || document.getElementById("password").value == "" ){
+        alert("Password or Username fields are empty ");
+    }
     let username = document.getElementById("username").value;
     let password = document.getElementById("password").value;
     if (username.trim() != "" && password.trim() != "") {
@@ -38,10 +44,10 @@ async function login() {
             this.document.getElementById("input2").style.display = "none";
             this.document.getElementById("first-message").style.display = "none";
             this.document.getElementById("search-label").style.display = "block";
-            this.document.getElementById("search-input").style.display = "block";
+            this.document.getElementById("search-input").style.display = "inline-block";
+            this.document.getElementById("btn-search").style.display = "block";
+            this.document.getElementById("myAudio").style.display = "block"
 
-
-            //this.document.getElementById("input-credentials").style.display="none";
 
         }
     }
@@ -65,23 +71,25 @@ function clearAfterLogOut() {
 async function logout() {
     document.getElementById("containerALL").style.display = 'none'; // display the container all after login 
     this.document.getElementById("btn-logout").style.display = "none"; // display logout button 
-    this.document.getElementById("btn-submit").style.display = "block";
-    this.document.getElementById("username").style.display = "block";
-    this.document.getElementById("password").style.display = "block";
-    this.document.getElementById("input1").style.display = "block";
-    this.document.getElementById("input2").style.display = "block";
-    this.document.getElementById("first-message").style.display = "block";
+    this.document.getElementById("btn-submit").style.display = "inline-block";
+    this.document.getElementById("username").style.display = "inline-block";
+    this.document.getElementById("password").style.display = "inline-block";
+    this.document.getElementById("input1").style.display = "inline-block";
+    this.document.getElementById("input2").style.display = "inline-block";
+    this.document.getElementById("first-message").style.display = "inline-block";
     this.document.getElementById("search-label").style.display = "none";
     this.document.getElementById("search-input").style.display = "none";
+    this.document.getElementById("btn-search").style.display = "none";
 
 
     //clean table rown after logout 
     clearAfterLogOut();
 }
 
+
 async function loadTableSong() {
     //document.getElementById("error-message").innerText = "";
-    let songs = await fetch("http://localhost:4000/songs", {
+     songs = await fetch("http://localhost:4000/songs", {
         method: "GET"
     }).then(res => res.json());
     for (let song of songs) {
@@ -100,30 +108,49 @@ function addRow(id, title, date) {
 
 }
 async function deletefromPlaylist(id){
-    let songs = await fetch("http://localhost:4000/playlist/"+id, {
+    await fetch("http://localhost:4000/playlist/"+id, {
         method: "DELETE"
     }).then(res => {
         loadTablePlaylist();
         return res.json();
     });
 }
+
 async function addSongToPlaylist(id){
-    let songs = await fetch("http://localhost:4000/playlist/"+id, {
+     await fetch("http://localhost:4000/playlist/"+id, {
         method: "POST"
     }).then(res => {
         loadTablePlaylist();
         return res.json();
     });
 }
+// this one for searching 
+async function searchByTitle(){
+    let title = document.getElementById('search-input').value;
+    let res =await fetch("http://localhost:4000/songs/search/"+title, {
+        method: "GET"
+    }).then(res => res.json());
+   console.log(res);
+   //loadTableSong();
+    //document.getElementById("error-message").innerText = "";
+    var tb = document.getElementById('mySongTable');
+    while (tb.rows.length > 1) {
+        tb.deleteRow(1);
+    }console.log("tkherbi9a ",res)
+    for (let song of res) {
+        addRow(song.idsong, song.titlesong, song.releasedatesong);
+    }
+
+}
 
 
 async function loadTablePlaylist() { //-------------------------------------------
     //document.getElementById("error-message").innerText = "";
     clearplaylistsongs();
-    let songs = await fetch("http://localhost:4000/playlist", {
+    let psongs = await fetch("http://localhost:4000/playlist", {
         method: "GET"
     }).then(res => res.json());
-    for (let song of songs) {
+    for (let song of psongs) {
         console.log(song)
         addRowPlaylist(song.idsong, song.titlesong);
     }
@@ -135,16 +162,15 @@ function addRowPlaylist(id, title) {
     var row = table.insertRow(rowCount);
     row.insertCell(0).innerHTML = id;
     row.insertCell(1).innerHTML = title;
-    row.insertCell(2).innerHTML = '<button style="width: 70px" onclick="deletefromPlaylist(' + id + ')">-</button> <button style="width: 70px" ><></button>';
+    row.insertCell(2).innerHTML = '<button style="width: 70px" onclick="deletefromPlaylist(' + id + ')">-</button> <button onclick="playMusic(' + id + ')" style="width: 70px" ><></button>';
 }
 
-//- nothing 
-function hidetuff() {
-    document.getElementById(containerALL).style.display = 'none';
-    document.getElementById(mySongTable).style.display = 'none';
+
+function playMusic(id) {
+    let song = songs.filter(s => s.idsong == id)[0];
+    console.log("hello " , song,songs,id)
+    document.getElementById("myAudio").src = song.onlineSource;
 
 }
-function showmySongTable() {
-    document.getElementById(mySongTable).style.display = 'block';
-}
+
 
