@@ -4,6 +4,13 @@
     font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;;
 }
 
+#myAudio-div{
+
+padding-left: 35%;
+padding-top: 20px;
+
+}
+
 .header {
     display: flex;
     flex-direction:column; 
@@ -40,9 +47,7 @@ table {
     padding-top: 0px;
     margin-top: 20;
     margin-top: -54px;
-    
 }
-
 input {
     margin-left: 64px;
     margin-top: -27px;
@@ -50,29 +55,13 @@ input {
     padding: 7px 15px;
     border-color: rgb(221, 221, 221);
     margin-right: 20px;
-
 }
-
 input:hover {
     border-radius: 5px;
     padding: 7px 15px;
     border-color: rgb(34, 34, 34);
 
 }
-
-/* .login-button,
- .logout-button {
-    background-color: black;
-    border: none;
-    border-radius: 10px;
-    color: white;
-    padding: 10px 22px;
-    text-align: center;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer; 
-} */
 .login-button:hover,
 .login-button:focus {
   background-color: #fb8332;
@@ -86,7 +75,37 @@ input:hover {
     box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
     transform: translateY(0);
 }
-.login-button,.logout-button{
+#btn-search{
+    align-items: center;
+    background-clip: padding-box;
+    background-color: #fa6400;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    justify-content: center;
+    line-height: 1.25;
+    margin: 0;
+    min-height: 3rem;
+    padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+    position: relative;
+    text-decoration: none;
+    transition: all 250ms;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: baseline;
+    width: auto;
+    
+
+}
+.login-button, .logout-button{
     align-items: center;
     background-clip: padding-box;
     background-color: #fa6400;
